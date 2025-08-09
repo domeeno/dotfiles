@@ -1,0 +1,40 @@
+# Font
+# font_family      JetBrains Mono Nerd Font
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+font_size        12.0
+
+# Cursor
+cursor_shape     block
+cursor_beam_thickness 1.0
+cursor_blink    true
+
+# Scrolling
+scrollback_lines 10000
+
+# Window
+window_padding_width 10
+
+# Tab bar
+enable_tab_bar no
+
+# Mouse
+mouse_hide_wait 3000
+mouse_hide_wait_with_selection 5000
+
+# Ligatures
+enable_ligatures true
+
+# Background opacity (0-1)
+background_opacity 0.95
+
+# Other tweaks
+term xterm-kitty
+
+
+
+# BEGIN_KITTY_THEME
+# Gruvbox Dark Hard
+include current-theme.conf
+# END_KITTY_THEME
