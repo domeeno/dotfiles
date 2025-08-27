@@ -36,3 +36,4 @@ export NVM_DIR="$HOME/.nvm"
 if [[ -f ~/alias.sh ]]; then
   source ~/alias.sh
 fi
+
