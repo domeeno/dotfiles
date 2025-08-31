@@ -1,0 +1,49 @@
+window {
+  margin: 0px;
+  border: 2px solid rgba(33, 204, 255, 0.9); /* match active border */
+  border-radius: 10px;
+  background-color: rgba(26, 26, 26, 0.7); /* semi-transparent for Hyprland blur */
+  color: #ffffff;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+#input {
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: rgba(59, 59, 59, 0.6);
+  color: #ffffff;
+}
+
+#inner-box {
+  margin: 5px;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+#outer-box {
+  margin: 5px;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+#scroll {
+  margin: 0px;
+}
+
+#text {
+  margin: 5px;
+  border-radius: 6px;
+  padding: 6px;
+  color: #eeeeee;
+}
+
+#entry:selected {
+  background-color: rgba(0, 255, 153, 0.3); /* green highlight */
+  border-radius: 6px;
+  color: #ffffff;
+}
+

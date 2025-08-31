@@ -17,6 +17,8 @@
     "clock"
   ],
   "modules-right": [
+    "custom/screenshot",
+    "custom/savescreenshot",
     "wlr/taskbar",
     "bluetooth",
     "network",

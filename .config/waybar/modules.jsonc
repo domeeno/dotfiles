@@ -62,5 +62,15 @@
     "tooltip": "Power Menu",
     "on-click": "wlogout",
     "interval": 0
+  },
+  "custom/screenshot": {
+    "format": "󰊓",
+    "tooltip-format": "Take Screenshot",
+    "on-click": "hyprshot -m region --clipboard-only"
+  },
+  "custom/savescreenshot": {
+    "format": "󰉉",
+    "tooltip-format": "Save Screenshot",
+    "on-click": "hyprshot -m region -o $HOME/Pictures/Screenshots"
   }
 }
