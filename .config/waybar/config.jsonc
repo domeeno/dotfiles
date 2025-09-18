@@ -20,6 +20,7 @@
     "custom/screenshot",
     "custom/savescreenshot",
     "wlr/taskbar",
+    "custom/pipewire",
     "bluetooth",
     "network",
     "battery",

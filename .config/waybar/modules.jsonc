@@ -26,7 +26,7 @@
     "format-disconnected": "󰤠 ",
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
-    "on-click": "" // TODO add a network manager
+    "on-click": "nm-connection-editor" // TODO add a network manager
   },
   "cpu": {
     "interval": 2,
@@ -72,5 +72,20 @@
     "format": "󰉉",
     "tooltip-format": "Save Screenshot",
     "on-click": "hyprshot -m region -o $HOME/Pictures/Screenshots"
+  },
+  "custom/pipewire": {
+    "exec": "pw-volume status",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 8,
+    "format": "{icon} {percentage}",
+    "format-icons": {
+      "mute": "󰖁",
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    }
   }
 }
