@@ -3,8 +3,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""           # empty because we're using Starship for the prompt
 
-export SECRET_NAME="Steve Jobs"
-
 # Plugins you want oh-my-zsh to load
 plugins=(
   git
@@ -33,10 +31,16 @@ eval "$(starship init zsh)"
 
 # --------- dotfiles ---------
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ls='eza --oneline --icons'
-alias ll='eza --oneline --icons -l --git --git-repos-no-status'
+alias ls='eza --oneline --icons --group-directories-first'
+alias ll='ls -l --git --git-repos-no-status'
 alias tree='eza --icons -T -L 3'
 alias cat='bat'
+alias n='nvim .'
+alias py='python3'
+
+function clone() {
+  git clone git@github.com:domeeno/$1.git
+}
 
 # --------- zsh-autosuggestions (should be loaded by oh-my-zsh if in plugins)
 # If not loaded, uncomment the line below (use when cloned manually)
@@ -63,3 +67,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="$HOME/.local/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/dom/.lmstudio/bin"
+# End of LM Studio CLI section
+
+# opencode
+export PATH=/home/dom/.opencode/bin:$PATH
