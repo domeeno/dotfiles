@@ -30,6 +30,7 @@ zstyle ':completion:*' menu select
 eval "$(starship init zsh)"
 
 # --------- dotfiles ---------
+alias refresh='source ~/.zshrc'
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls='eza --oneline --icons --group-directories-first'
 alias ll='ls -l --git --git-repos-no-status'
@@ -72,5 +73,3 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/home/dom/.lmstudio/bin"
 # End of LM Studio CLI section
 
-# opencode
-export PATH=/home/dom/.opencode/bin:$PATH
