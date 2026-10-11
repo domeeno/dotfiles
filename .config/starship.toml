@@ -1,36 +1,16 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
 format = """
-[| ](bold color_orange)\
-$os\
-$username\
-[|](bold color_purple)\
-$directory\
-[|](bold color_red)\
-$git_branch\
-$git_metrics\
-[ ](dimmed color_red)\
-$git_status\
-[|](bold color_aqua)\
-$c\
-$cpp\
-$rust\
-$golang\
-$nodejs\
-$bun\
-$php\
-$java\
-$kotlin\
-$haskell\
-$lua\
-$python\
-[|](bold color_blue)\
-$docker_context\
-$conda\
-$pixi\
+[| ](bold purple)\
+($os$username)\
+( [](bold purple)$directory)\
+( [|](bold color_red)($git_branch$git_metrics)([ ](dimmed color_red)$git_status))\
+( [|](bold color_aqua)($c$cpp$cmake$rust$golang$bun$nodejs$php$java$kotlin$haskell$lua$python$dotnet$elixir$zig))\
+( [|](bold color_blue)($docker_context$conda$pixi$kubernetes$helm))\
 [|](bold color_green)\
 $fill\
 $cmd_duration\
+$battery\
 $time\
 $line_break$character"""
 
@@ -88,8 +68,7 @@ disabled = false
 show_always = true
 
 [directory]
-home_symbol = ""
-style = "color_purple"
+style = "purple"
 format = "[ $path ]($style)"
 truncation_length = 2
 truncation_symbol = "…/"
@@ -156,6 +135,11 @@ style = "149 bold"
 disabled = false
 format = "[ $symbol($version(-$name) )]($style)"
 
+[cmake]
+symbol = " "
+style = "bold blue"
+format = "[ $symbol($version )]($style)"
+
 [rust]
 symbol = ""
 style = "bold red"
@@ -186,15 +170,35 @@ symbol = ""
 style = "bold purple"
 format = "[ $symbol($version )]($style)"
 
+[lua]
+symbol = ""
+style = "bold blue"
+format = "[ $symbol ($version )]($style)"
+
 [python]
 symbol = " "
 style = "yellow bold"
 format = '[ ${symbol} ${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
-[lua]
-symbol = ""
-style = "bold blue"
-format = "[ $symbol ($version )]($style)"
+[dotnet]
+symbol = ".NET "
+style = "blue bold"
+format = "[ $symbol($version )(🎯 $tfm )]($style)"
+
+[elixir]
+symbol = " "
+style = "bold purple"
+format = '[ $symbol($version \(OTP $otp_version\) )]($style)'
+
+[zig]
+symbol = " "
+style = "bold yellow"
+format = "[ $symbol($version )]($style)"
+
+[scala]
+symbol = " "
+style = "red bold"
+format = "[ $symbol($version )]($style)"
 
 [docker_context]
 symbol = ""
@@ -209,10 +213,92 @@ format = "[[ $symbol( $environment) ](color_blue)]($style)"
 style = ""
 format = "[[ $symbol( $version)( $environment) ](color_blue)]($style)"
 
+[kubernetes]
+symbol = " "
+style = "cyan bold"
+disabled = true
+format = '[ $symbol$context( \($namespace\))]($style) in '
+
+[helm]
+format = "[  $version](bold white) "
+
 [cmd_duration]
 min_time = 200
 show_milliseconds = true
-format = "[$duration](color_blue)"
+format = "[$duration ](color_blue)"
+
+[battery]
+disabled = false
+format = '[{ ](dimmed blue)[$symbol]($style)[ }](dimmed blue) '
+full_symbol = "┃┃┃┃┃"
+charging_symbol = "󱐋 ┃┃┃┃┃"
+discharging_symbol = "┃┃┃┃┃"
+
+[[battery.display]]
+threshold = 100
+style = "bold blue"
+charging_symbol = "󱐋 ┃┃┃┃┃"
+discharging_symbol = "┃┃┃┃┃"
+
+[[battery.display]]
+threshold = 90
+style = "blue"
+charging_symbol = "󱐋 ┃┃┃┃╻"
+discharging_symbol = "┃┃┃┃╻"
+
+[[battery.display]]
+threshold = 80
+style = "blue"
+charging_symbol = "󱐋 ┃┃┃┃┆"
+discharging_symbol = "┃┃┃┃┆"
+
+[[battery.display]]
+threshold = 70
+style = "blue"
+charging_symbol = "󱐋 ┃┃┃╻┆"
+discharging_symbol = "┃┃┃╻┆"
+
+[[battery.display]]
+threshold = 60
+style = "blue"
+charging_symbol = "󱐋 ┃┃┃┆┆"
+discharging_symbol = "┃┃┃┆┆"
+
+[[battery.display]]
+threshold = 50
+style = "blue"
+charging_symbol = "󱐋 ┃┃╻┆┆"
+discharging_symbol = "┃┃╻┆┆"
+
+[[battery.display]]
+threshold = 40
+style = "blue"
+charging_symbol = "󱐋 ┃┃┆┆┆"
+discharging_symbol = "┃┃┆┆┆"
+
+[[battery.display]]
+threshold = 30
+style = "blue"
+charging_symbol = "󱐋 ┃╻┆┆┆"
+discharging_symbol = "┃╻┆┆┆"
+
+[[battery.display]]
+threshold = 20
+style = "blue"
+charging_symbol = "󱐋 ┃┆┆┆┆"
+discharging_symbol = "┃┆┆┆┆"
+
+[[battery.display]]
+threshold = 10
+style = "bold blue"
+charging_symbol = "󱐋 ╻┆┆┆┆"
+discharging_symbol = "╻┆┆┆┆"
+
+[[battery.display]]
+threshold = 0
+style = "bold blue"
+charging_symbol = "󱐋 ┆┆┆┆┆"
+discharging_symbol = "┆┆┆┆┆"
 
 [time]
 disabled = false
