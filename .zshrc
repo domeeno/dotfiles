@@ -1,7 +1,7 @@
  # ~/.zshrc - minimal + useful
 
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME=""           # empty because we're using Starship for the prompt
+ZSH_THEME="" # empty because we're using Starship for the prompt
 
 # Plugins you want oh-my-zsh to load
 plugins=(
@@ -36,8 +36,12 @@ alias ls='eza --oneline --icons --group-directories-first'
 alias ll='ls -l --git --git-repos-no-status'
 alias tree='eza --icons -T -L 3'
 alias cat='bat'
+alias c='clear'
 alias n='nvim .'
 alias py='python3'
+alias blog='cd ~/dev/web/blog/domeenoblog/'
+alias lmstudio='~/media/apps/LM-Studio-0.4.12-1-x64.AppImage'
+alias scheme='chez'
 
 function clone() {
   git clone git@github.com:domeeno/$1.git
@@ -73,3 +77,5 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/home/dom/.lmstudio/bin"
 # End of LM Studio CLI section
 
+# opencode
+export PATH=/home/dom/.opencode/bin:$PATH
