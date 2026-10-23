@@ -1,0 +1,15 @@
+[user]
+	email = dominicflocea.dev@gmail.com
+	name = domeeno
+[init]
+	defaultBranch = main
+[alias]
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  undo = reset --soft HEAD~1
+  others = "ls-files --others --ignored --exclude-from=.gitignore"
+  st = status
+[http]
+	version = HTTP/1.1
+	postBuffer = 157286400
+	lowSpeedLimit = 0
+	lowSpeedTime = 999999
